@@ -20,7 +20,7 @@ export class StudentListComponent implements OnInit{
   }
 
   ngOnInit(){
-    this.studentList = this.stdService.STUDENTS;
+    //this.studentList = this.stdService.STUDENTS;
   }
 
   addNewStudent(){
@@ -29,7 +29,8 @@ export class StudentListComponent implements OnInit{
       name: this.sName,
       age: this.sAge
     }
-    this.studentList.push(newStudent);
+    this.stdService.addStudnet(newStudent).subscribe();
+    //this.studentList.push(newStudent);
   }
 
   onClearData(){
