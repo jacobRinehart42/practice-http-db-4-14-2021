@@ -9,4 +9,8 @@ export class StudentService {
   STUDENTS: Student[] = [];
 
   constructor(private http: HttpClient) {}
+
+  addStudnet(newStd: Student){
+    return this.http.post('https://studentdata-8545f-default-rtdb.firebaseio.com/' + 'student.json', newStd);
+  }
 }
